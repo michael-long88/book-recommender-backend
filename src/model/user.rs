@@ -71,7 +71,7 @@ pub async fn new_user(
     }
     let sql = "INSERT INTO users (first_name, last_name, email) VALUES ($1, $2, $3)";
 
-    let _ = sqlx::query(&sql)
+    let _ = sqlx::query(sql)
         .bind(&user.first_name)
         .bind(&user.last_name)
         .bind(&user.email)

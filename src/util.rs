@@ -34,8 +34,8 @@ pub async fn seed_users(pool: &PgPool) -> Result<(), CustomError> {
     };
 
     for user in vec![user1, user2] {
-        sqlx::query(&sql)
-            .bind(&user.id)
+        sqlx::query(sql)
+            .bind(user.id)
             .bind(&user.first_name)
             .bind(&user.last_name)
             .bind(&user.email)
